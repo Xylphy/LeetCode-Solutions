@@ -12,16 +12,15 @@ class Solution(object):
         :type val: int
         :rtype: int
         """
-        tmp = []
+        k = 0;
 
         for i in range(len(nums)):
             if nums[i] != val:
-                tmp.append(nums[i])
+                nums[k] = nums[i]
+                k += 1
 
-        for i in range(len(tmp)):
-            nums[i] = tmp[i]
+        return k
 
-        return len(tmp)
         
 # @lc code=end
 
