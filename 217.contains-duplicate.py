@@ -11,14 +11,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        s = set()
-
-        for num in nums:
-            if num in s:
-                return True
-            s.add(num)
-
-        return False
+        return len(set(nums)) != len(nums)
 
         
 # @lc code=end
