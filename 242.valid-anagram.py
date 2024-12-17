@@ -7,11 +7,13 @@
 # @lc code=start
 class Solution(object):
     def isAnagram(self, s, t):
+        from collections import Counter
         """
         :type s: str
         :type t: str
         :rtype: bool
         """
         
-# @lc code=end
+        return Counter(s) == Counter(t)
 
+# @lc code=end
