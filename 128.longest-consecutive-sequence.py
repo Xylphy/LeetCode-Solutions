@@ -6,38 +6,27 @@
 
 # @lc code=start
 class Solution():
-    def union_find(self, union_find, num1):
-        while num1 in union_find:
-            if union_find[num1] is None:
-                return num1
-            num1 = union_find[num1]
-
 
     def longestConsecutive(self, nums):
         """
         :type nums: List[int]
         :rtype: int
         """
-        union_find = {}
-        frequency = {}
+        set_nums = set(nums)
+        max_length = 0
 
-        for num in nums:
-            if num not in union_find:
-                union_find[num] = None
-                frequency[num] = 1
+        for num in set_nums:
+            if num - 1 not in set_nums:
+                current_num = num
+                current_length = 1
 
-                union_find_left = self.union_find(union_find, num - 1)
-                union_find_right = self.union_find(union_find, num + 1)
+                while current_num + 1 in set_nums:
+                    current_num += 1
+                    current_length += 1
 
-                if union_find_left is not None:
-                    frequency[num] += frequency[union_find_left]
-                    union_find[union_find_left] = num
+                max_length = max(max_length, current_length)
 
-                if union_find_right is not None:
-                    frequency[num] += frequency[union_find_right]
-                    union_find[union_find_right] = num
-
-        return max(frequency.values() or [0])
+        return max_length
         
 # @lc code=end
 
