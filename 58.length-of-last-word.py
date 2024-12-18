@@ -11,11 +11,7 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-
-        s = s.strip()
-        s = s.split(" ")
-
-        return len(s[-1])
+        return len(s.strip().split(" ")[-1])
         
 # @lc code=end
 
