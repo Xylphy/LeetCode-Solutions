@@ -11,7 +11,6 @@ class Solution(object):
         :type accounts: List[List[int]]
         :rtype: int
         """
-
         return max([sum(account) for account in accounts])
         
 # @lc code=end
