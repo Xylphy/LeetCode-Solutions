@@ -25,7 +25,7 @@ class Solution(object):
 
             if level % 2 == 1:
                 for i in range(len(queue) // 2):
-                    queue[i].val, queue[-i - 1].val = queue[- i- 1].val, queue[i].val
+                    queue[i].val, queue[-i - 1].val = queue[-i - 1].val, queue[i].val
 
             for node in queue:
                 if node.left:
