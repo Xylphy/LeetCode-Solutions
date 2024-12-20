@@ -35,7 +35,6 @@ class Solution(object):
                     if num != heap[0]:
                         return False
                     heapq.heappop(heap)
-                    
 
         return True
                 
