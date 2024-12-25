@@ -11,8 +11,7 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
-        dup = abs(x)
-        dup = int(str(dup)[::-1])
+        dup = int(str(abs(x))[::-1])
         if x < 0:
             dup = -dup
 
