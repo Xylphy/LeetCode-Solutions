@@ -19,6 +19,7 @@ class Solution(object):
         """
         if not head:
             return None
+
         curr_odd, curr_even = odd, even = head, head.next
 
         while curr_even and curr_even.next:
