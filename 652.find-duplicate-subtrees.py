@@ -23,7 +23,7 @@ class Solution(object):
 
         def traverse(node):
             if not node:
-                return 'null'
+                return None
 
             left = traverse(node.left)
             right = traverse(node.right)
