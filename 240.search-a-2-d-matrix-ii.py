@@ -1,0 +1,31 @@
+#
+# @lc app=leetcode id=240 lang=python
+#
+# [240] Search a 2D Matrix II
+#
+
+
+# @lc code=start
+class Solution(object):
+    def searchMatrix(self, matrix, target):
+        """
+        :type matrix: List[List[int]]
+        :type target: int
+        :rtype: bool
+        """
+
+        rows, cols = len(matrix), len(matrix[0])
+        row, col = 0, cols - 1
+
+        while row < rows and col >= 0:
+            if matrix[row][col] == target:
+                return True
+            elif matrix[row][col] > target:
+                col -= 1
+            else:
+                row += 1
+
+        return False
+
+
+# @lc code=end
